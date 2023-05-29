@@ -6,24 +6,24 @@ const supertest = require('supertest');
 const mockRequest = supertest(app);
 const { sequelizeDatabase } = require('../src/auth/models');
 
-beforeAll(async () => {
+beforeAll( async () => {
   await sequelizeDatabase.sync();
 });
 
-afterAll(async () => {
+afterAll( async () => {
   await sequelizeDatabase.drop();
 });
 
 describe('Server', () => {
-
-  test('returns 404 for invalid route', async () => {
+  
+  test('404 on bad route', async () => {
     const response = await mockRequest.get('/foo');
     expect(response.status).toEqual(404);
   });
-
-  test('returns 404 for invalid method', async () => {
+  
+  test('404 on bad method', async () => {
     const response = await mockRequest.post('/');
     expect(response.status).toEqual(404);
   });
-
+  
 });

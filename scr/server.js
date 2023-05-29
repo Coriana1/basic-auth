@@ -2,7 +2,6 @@
 
 // 3rd Party Resources
 const express = require('express');
-const cors = require('cors');
 
 // Prepare the express app
 const app = express();
@@ -13,7 +12,6 @@ const errorMessage = require('./middleware/500');
 const userRouter = require('./auth/router');
 
 // Middlewares
-app.use(cors());
 app.use(express.json());
 
 // Process FORM input and put the data on req.body
@@ -32,7 +30,4 @@ app.use(errorMessage);
 
 const start = (port) => app.listen(port, () => console.log('listening on port:', port));
 
-module.exports = {
-  app,
-  start,
-};
+module.exports = { app, start };

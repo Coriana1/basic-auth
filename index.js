@@ -1,10 +1,11 @@
 'use strict';
 
 require('dotenv').config();
-const { sequelizeDatabase } = require('./src/auth/models/index');
-const { start } = require('./src/server');
 
-const PORT = process.env.PORT || 3002;
+const { sequelizeDatabase } = require('./scr/auth/models');
+const { start } = require('./scr/server');
+
+const PORT = process.env.PORT || 3001;
 
 // make sure our tables are created, start up the HTTP server.
 sequelizeDatabase.sync()
