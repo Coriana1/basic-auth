@@ -1,10 +1,17 @@
 'use strict';
 
 require('dotenv').config();
-const { startServer } = require('./server');
 
-// Connect to the database
-// Add any necessary database configuration here
+const { sequelizeDatabase } = require('./scr/auth/models');
+const { start } = require('./scr/server');
 
-// Start the server
-startServer();
+const PORT = process.env.PORT || 3001;
+
+// make sure our tables are created, start up the HTTP server.
+sequelizeDatabase.sync()
+  .then(() => {
+    console.log('Connection is working!');
+    start(PORT);
+  }).catch(e => {
+    console.error('Could not start server', e.message);
+  });

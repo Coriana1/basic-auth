@@ -9,11 +9,6 @@ const DATABASE_URL = process.env.NODE_ENV === 'test' ? 'sqlite::memory:' : proce
 // Create a new Sequelize 
 const sequelizeDatabase = new Sequelize(DATABASE_URL);
 
-
 const userModel = users(sequelizeDatabase, DataTypes);
 
-module.exports = {
-  sequelizeDatabase,
-  userModel,
-};
-
+module.exports = { sequelizeDatabase, userModel };

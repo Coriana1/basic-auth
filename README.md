@@ -12,8 +12,8 @@ This very basic express server is used as a base for CI/CD deployment exercises
 
 ### Links and Resources
 
-- [GitHub Actions ci/cd](https://github.com/Coriana1/api-server/actions)
-- [back-end dev server url](https://api-server-4wh8.onrender.com)
+- [GitHub Actions ci/cd](https://github.com/Coriana1/basic-auth/actions)
+- [back-end dev server url](https://basic-auth-hzm0.onrender.com)
 
 ### Collaborators
 

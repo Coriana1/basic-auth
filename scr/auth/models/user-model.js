@@ -1,10 +1,8 @@
 'use strict';
 
-const { Sequelize, DataTypes } = require('sequelize');
-
 // Create a Sequelize model
-const UserModel = (sequelizeDatabase) => {
-  return sequelizeDatabase.define('users', {
+module.exports = (sequelizeDatabase, DataTypes) => {
+  return sequelizeDatabase.define('User', {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -15,6 +13,3 @@ const UserModel = (sequelizeDatabase) => {
     },
   });
 };
-
-// Export the UserModel
-module.exports = UserModel;
